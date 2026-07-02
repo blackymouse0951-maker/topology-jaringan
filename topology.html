@@ -237,9 +237,60 @@
              <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
                 <button onclick="showMateri('ring')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
                     ← Back
-                </button> 
+                </button>
+                <button onclick="showMateri('mesh')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Next →
+                </button>
              </div>
+         </div>
+
+         <div id="konten-tree" class="materi-section space-y-6 hidden flex-col h-full justify-between">
+            <div class="space-y-4">
+                <div class="space-y-1">
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Topologi Mesh</h2>
+                </div>
+                <center><img src="mesh.png" alt="Topologi Ring" width="310" height="310"></center>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                   <b>Topologi Mesh</b> adalah desain jaringan di mana setiap perangkat (node) saling terhubung langsung satu sama lain. Sistem ini memiliki redundansi tinggi. Jika satu jalur kabel atau koneksi terputus, data dapat dialihkan melalui jalur alternatif. Topologi ini sangat andal untuk sistem kritikal.
+                </p>
+                <p class="font-bold text-slate-900">Cara Kerja:</p>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                   Jaringan di mana setiap perangkat (node) terhubung langsung satu sama lain. Data dikirim melalui jalur tercepat secara real-time. Jika satu jalur rusak, data otomatis dialihkan ke jalur lain (routing dan flooding), memastikan koneksi tetap stabil tanpa single point of failure.
+                </p>
     
+                <div class="bg-green-200 p-4 rounded-xl border border-green-300">
+                    <p class="font-semibold mb-1 text-green-900">Kelebihan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Keandalan Tinggi:</b> Tidak ada titik kegagalan tunggal (single point of failure), sehingga kerusakan satu jalur tidak melumpuhkan seluruh jaringan.</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Keamanan & Privasi:</b> Data dikirim langsung ke perangkat tujuan melalui jalur pribadi, meminimalkan risiko intersepsi.</span>
+                    </p>
+                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Performa Stabil:</b> Kecepatan transfer data lebih konsisten karena tidak harus berbagi bandwidth dengan perangkat lain sekaligus</span>
+                    </p>
+                </div>
+
+                <div class="bg-rose-200 p-4 rounded-xl border border-rose-300">
+                    <p class="font-semibold mb-1 text-rose-900">Kekurangan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Biaya Tinggi:</b> Membutuhkan jumlah kabel (untuk jaringan kabel) dan port I/O yang sangat banyak. Untuk perangkat sejumlah n, jumlah koneksi maksimal dihitung dengan rumus \(\frac{n(n-1)}{2}\).</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Instalasi Rumit:</b> Memerlukan konfigurasi yang kompleks dan manajemen perawatan yang sulit.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
+                <button onclick="showMateri('tree')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
+                    ← Back
+                </button>
+                <button onclick="showMateri('hybrid')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Next →
+                </button>
+             </div>
+         </div>
     </main>
 
     <footer class="text-center text-xs text-slate-400 my-4">
