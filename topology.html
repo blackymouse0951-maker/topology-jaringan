@@ -14,7 +14,7 @@
 
     <header class="max-w-2xl w-full mx-auto text-center my-4">
         <h1 class="text-2xl font-bold text-indigo-600 tracking-tight">NetTopology 🌐</h1>
-        <p class="text-xs text-slate-400 mt-1">Modul Belajar Jaringan Interaktif</p>
+        <p class="text-xs text-slate-400 mt-1">Modul Belajar Topologi Jaringan</p>
     </header>
 
     <main class="max-w-2xl w-full mx-auto bg-white border border-slate-200/80 rounded-3xl shadow-xs p-6 md:p-8 my-auto flex flex-col justify-between min-h-[400px]">
@@ -22,20 +22,17 @@
         <div id="konten-pengantar" class="materi-section space-y-6 flex flex-col h-full justify-between">
             <div class="space-y-4">
                 <div class="space-y-1">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Mulai</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Welcome</span>
                     <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Apa itu Topologi Jaringan?</h2>
                 </div>
                 <p class="text-slate-600 leading-relaxed text-sm md:text-base">
-                    Topologi jaringan adalah peta atau struktur yang menjelaskan bagaimana cara komputer-komputer saling terhubung satu sama lain dalam sebuah jaringan. Pemilihan topologi bakal nentuin kecepatan data, biaya pembuatan, hingga kemudahan saat ada jaringan yang rusak.
+                    <b>Topologi jaringan</b> adalah pola atau metode yang digunakan untuk menghubungkan beberapa komputer atau perangkat dalam jaringan, baik secara fisik maupun logis. Ini mengatur bagaimana node (perangkat) saling berkomunikasi dan bagaimana data mengalir dalam sistem tersebut.
                 </p>
-                <div class="p-4 bg-amber-50 border border-amber-100 rounded-2xl text-amber-800 text-xs md:text-sm">
-                    💡 <strong>Tips Pagi:</strong> Baca penjelasan di atas, lalu gunakan tombol di bawah untuk langsung berpindah materi dengan praktis!
-                </div>
             </div>
             
             <div class="flex justify-end pt-6 border-t border-slate-100 mt-6">
                 <button onclick="showMateri('bus')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
-                    Mulai Belajar: Topologi Bus →
+                    Next →
                 </button>
             </div>
         </div>
@@ -43,12 +40,16 @@
         <div id="konten-bus" class="materi-section space-y-6 hidden flex flex-col h-full justify-between">
             <div class="space-y-4">
                 <div class="space-y-1">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-amber-500">Topologi 01</span>
-                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">🚌 Topologi Bus</h2>
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Topologi Bus</h2>
                 </div>
                 <p class="text-slate-600 leading-relaxed text-sm md:text-base">
-                    Topologi Bus menghubungkan semua komputer menggunakan <strong>satu kabel utama</strong> (bus) lurus yang panjang. Di kedua ujung kabel utama ini harus ditutup dengan alat bernama <em>terminator</em>.
+                    <b>Topologi Bus</b> adalah konfigurasi jaringan linear di mana semua perangkat komputer terhubung ke satu kabel utama sebagai jalur transmisi tunggal. Kabel pusat ini bertindak seperti koridor utama atau tulang punggung (backbone) tempat data mengalir dari satu ujung ke ujung lainnya.
                 </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 justify-center items-center">
+                    <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100 flex flex-col items-center justify-center text-center">
+                        <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
+                        <p class="text-xs text-emerald-700">Irit kabel, biaya murah, dan gampang kalau mau nambah komputer baru.</p>
+                    </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100">
                         <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
