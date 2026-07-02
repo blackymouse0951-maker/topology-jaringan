@@ -136,30 +136,50 @@
         <div id="konten-ring" class="materi-section space-y-6 hidden flex-col h-full justify-between">
             <div class="space-y-4">
                 <div class="space-y-1">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-purple-500">Topologi 03</span>
-                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">⭕ Topologi Ring</h2>
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Topologi Ring</h2>
                 </div>
+                
                 <p class="text-slate-600 leading-relaxed text-sm md:text-base">
-                    Komputer dihubungkan melingkar membentuk seperti <strong>cincin</strong>. Data mengalir satu arah dari satu komputer ke komputer sebelahnya sampai nembus ke tujuan.
+                   <b>Topologi ring</b> adalah jaringan komputer di mana setiap perangkat terhubung ke dua perangkat lain, membentuk pola melingkar (cincin). Data mengalir searah atau berlawanan arah dari satu perangkat ke perangkat berikutnya menggunakan token. Jika satu perangkat rusak, seluruh jaringan bisa terputus.
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100">
-                        <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
-                        <p class="text-xs text-emerald-700">Performa pengiriman data stabil dan layout kabel cenderung rapi.</p>
-                    </div>
-                    <div class="bg-rose-50/60 p-4 rounded-xl border border-rose-100">
-                        <h4 class="font-semibold text-rose-800 mb-1 text-xs uppercase tracking-wide">👎 Kekurangan</h4>
-                        <p class="text-xs text-rose-700">Satu komputer/kabel bermasalah, sirkulasi data macet total ke semuanya.</p>
-                    </div>
+                <p class="font-bold text-slate-900">Cara Kerja:</p>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                   Data dikirim secara estafet searah jarum jam dari satu komputer ke komputer berikutnya menggunakan token (tiket digital); komputer yang ingin mengirim data akan mengisi token dengan pesan dan alamat tujuan, kemudian token tersebut berputar dalam lingkaran hingga disalin oleh komputer penerima dan kembali ke pengirim untuk dikosongkan.
+                </p>
+                <center><img src="Star.png" alt="Topologi Ring" width="280" height="200"></center>
+                <div class="bg-green-200 p-4 rounded-xl border border-green-300">
+                    <p class="font-semibold mb-1 text-green-900">Kelebihan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Hemat Kabel:</span> Biaya instalasi dan kebutuhan kabel jauh lebih sedikit dibandingkan topologi mesh atau star.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Performa Stabil:</span> Aliran data lebih teratur karena menggunakan sistem token passing, yang mencegah terjadinya tabrakan data (collision).
+                    </p>
+                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Pengaturan Mudah:</span> Penambahan atau pemindahan perangkat bisa dilakukan dengan relatif mudah tanpa harus merombak seluruh jaringan dari pusat
+                </div>
+
+                <div class="bg-rose-200 p-4 rounded-xl border border-rose-300">
+                    <p class="font-semibold mb-1 text-rose-900">Kekurangan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Sensitif Terhadap Kerusakan:</span> Jika satu kabel atau perangkat rusak (putus), koneksi seluruh jaringan akan terganggu atau mati total.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">• Sulit Troubleshooting:</span> Saat terjadi gangguan, pelacakan letak masalah memakan waktu karena tidak ada titik pusat.
+                    </p>
+                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">• Perlu Down Time:</span> Untuk menambah atau mengurangi perangkat, jaringan biasanya harus dihentikan sementara waktu.
+                    </p>
                 </div>
             </div>
 
+
             <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
                 <button onclick="showMateri('star')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
-                    ← Kembali
+                    ← Back
                 </button>
                 <button onclick="alert('Mantap! Berhasil menyelesaikan modul topologi pagi ini! 🎉')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
-                    Selesai Belajar ✨
+                    Next →
                 </button>
             </div>
         </div>
