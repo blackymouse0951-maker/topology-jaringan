@@ -50,36 +50,32 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div class="sm:col-span-2 flex justify-center">
                         <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100 text-center w-full sm:w-1/2">
-                            <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">Cara Kerja: </h4>
-                            <p class="text-xs text-emerald-700">Seluruh komputer terhubung secara estafet ke satu kabel panjang yang disebut backbone. Ketika sebuah data dikirim, data tersebut akan berjalan sepanjang kabel utama dan melewati semua komputer. Setiap komputer akan memeriksa apakah data tersebut ditujukan untuk dirinya. Jika iya, data diterima; jika tidak, data diabaikan. Di ujung kabel, terdapat Terminator untuk menyerap sinyal agar tidak memantul kembali dan menyebabkan gangguan.</p>
+                            <center><h4>Cara Kerja: </h4></center>
+                            <left><p>Seluruh komputer terhubung secara estafet ke satu kabel panjang yang disebut backbone. Ketika sebuah data dikirim, data tersebut akan berjalan sepanjang kabel utama dan melewati semua komputer. Setiap komputer akan memeriksa apakah data tersebut ditujukan untuk dirinya. Jika iya, data diterima; jika tidak, data diabaikan. Di ujung kabel, terdapat Terminator untuk menyerap sinyal agar tidak memantul kembali dan menyebabkan gangguan.</p></left>
                         </div>
                     </div>
 
                     <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100">
-                        <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">Kelebihan: </h4>
-                        <p class="text-xs text-emerald-700">
-                            - Sangat Hemat Biaya: Kebutuhan kabel sangat minim karena perangkat cukup dijajarkan di sepanjang kabel utama.
-                            - Instalasi Sederhana: Cocok untuk setup jaringan darurat atau skala kecil yang tidak memerlukan pengaturan rumit.
-                        </p>
+                        <center><h4>Kelebihan: </h4></center>
+                        <p>- Sangat Hemat Biaya: Kebutuhan kabel sangat minim karena perangkat cukup dijajarkan di sepanjang kabel utama.</p>
+                        <p>- Instalasi Sederhana: Cocok untuk setup jaringan darurat atau skala kecil yang tidak memerlukan pengaturan rumit.</p>
                     </div>
 
                     <div class="bg-rose-50/60 p-4 rounded-xl border border-rose-100">
-                        <h4 class="font-semibold text-rose-800 mb-1 text-xs uppercase tracking-wide">Kekurangan: </h4>
-                        <p class="text-xs text-rose-700">
-                            - Titik Kegagalan Tunggal (Single Point of Failure): Jika kabel utama patah atau putus di tengah, seluruh jaringan setelah titik tersebut (atau bahkan seluruhnya) akan mati total.
-                            - Tabrakan Data (Collision): Karena hanya ada satu jalur, jika dua komputer mengirim data secara bersamaan, akan terjadi tabrakan data yang memperlambat jaringan.
-                            - Sulit Melacak Masalah: Jika jaringan mati, teknisi harus memeriksa sambungan satu per satu di sepanjang kabel.
-                        </p>
+                        <center><h4>Kekurangan: </h4></center>
+                        <p>- Titik Kegagalan Tunggal (Single Point of Failure): Jika kabel utama patah atau putus di tengah, seluruh jaringan setelah titik tersebut (atau bahkan seluruhnya) akan mati total.</p>
+                        <p>- Tabrakan Data (Collision): Karena hanya ada satu jalur, jika dua komputer mengirim data secara bersamaan, akan terjadi tabrakan data yang memperlambat jaringan.</p>
+                        <p>- Sulit Melacak Masalah: Jika jaringan mati, teknisi harus memeriksa sambungan satu per satu di sepanjang kabel.</p>
                     </div>
                 </div>
             </div>
 
             <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
                 <button onclick="showMateri('pengantar')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
-                    ← Kembali
+                    ← Back
                 </button>
                 <button onclick="showMateri('star')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
-                    Lanjut: Topologi Star →
+                    Next →
                 </button>
             </div>
         </div>
