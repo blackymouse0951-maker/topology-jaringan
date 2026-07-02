@@ -3,178 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Topologi Jaringan</title>
+    <title>Belajar Topologi Jaringan Komputer</title>
     <style>
+        /* --- Google Fonts & Reset --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: #f4f6f9;
+            background-color: #f4f7f9;
             color: #333;
             line-height: 1.6;
         }
 
+        /* --- Header --- */
         header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: #fff;
+            padding: 2.5rem 1rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            margin-bottom: 0.5rem;
             font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
-        nav {
-            background-color: #222;
-            padding: 0.5rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        header p {
+            font-weight: 300;
+            opacity: 0.9;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            display: inline-block;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
-
+        /* --- Layout --- */
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 2rem auto;
             padding: 0 1rem;
-        }
-
-        .intro {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.3rem;
-        }
-
-        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
         }
 
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-top: 4px solid #3498db;
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .card h3 {
+        /* --- Content Area --- */
+        .main-content {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+        }
+
+        .materi-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #edf2f7;
+        }
+
+        .materi-section:last-child {
+            border-bottom: none;
+        }
+
+        .materi-section h2 {
+            color: #11998e;
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+        }
+
+        .materi-section h3 {
             color: #2c3e50;
-            margin-bottom: 0.5rem;
+            margin: 1.5rem 0 0.5rem 0;
         }
 
-        .pros-cons {
+        /* --- Visual Boxes --- */
+        .highlight-box {
+            background-color: #e8f8f5;
+            border-left: 4px solid #11998e;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pro-con-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
             margin-top: 1rem;
-            font-size: 0.9rem;
         }
 
-        .pros { color: #27ae60; }
-        .cons { color: #c0392b; }
+        @media (max-width: 576px) {
+            .pro-con-box {
+                grid-template-columns: 1fr;
+            }
+        }
 
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
+        .pc-card {
             padding: 1rem;
-            margin-top: 3rem;
+            border-radius: 6px;
+        }
+        .kelebihan { background-color: #eafaf1; border-top: 3px solid #2ecc71; }
+        .kekurangan { background-color: #fdedec; border-top: 3px solid #e74c3c; }
+
+        .pc-card h4 { margin-bottom: 0.5rem; }
+        .pc-card ul { padding-left: 1.2rem; font-size: 0.95rem; }
+
+        /* --- Table --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        table, th, td {
+            border: 1px solid #e2e8f0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f7fafc;
+            color: #2c3e50;
+        }
+
+        /* --- Sidebar --- */
+        aside {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        aside h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #11998e;
+            padding-bottom: 0.5rem;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        aside ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        aside ul li a {
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        aside ul li a:hover {
+            color: #11998e;
+            padding-left: 5px;
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1a202c;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 4rem;
             font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header / Banner -->
     <header>
-        <h1>Pengenalan Topologi Jaringan</h1>
-        <p>Pahami cara komputer saling terhubung dalam jaringan</p>
+        <h1>Modul Jaringan Komputer</h1>
+        <p>Memahami Topologi Jaringan: Struktur, Kelebihan, dan Kekurangan</p>
     </header>
 
-    <nav>
-        <a href="#definisi">Definisi</a>
-        <a href="#jenis">Jenis Topologi</a>
-    </nav>
-
+    <!-- Konten Utama -->
     <div class="container">
-        <section id="definisi" class="intro">
-            <h2>Apa itu Topologi Jaringan?</h2>
-            <p>Topologi jaringan adalah metode atau konsep yang digunakan untuk menghubungkan beberapa komputer menjadi sebuah jaringan yang saling terintegrasi. Pemilihan topologi sangat memengaruhi kecepatan pengiriman data, biaya instalasi, dan kemudahan dalam perawatan jaringan.</p>
-        </section>
-
-        <section id="jenis">
-            <h2>Jenis-Jenis Topologi Populer</h2>
-            <div class="grid">
+        
+        <!-- Area Materi -->
+        <main class="main-content">
+            
+            <!-- Pengenalan -->
+            <section id="pengenalan" class="materi-section">
+                <h2>1. Apa itu Topologi Jaringan?</h2>
+                <p><strong>Topologi jaringan</strong> adalah peta atau struktur visual yang menjelaskan bagaimana komputer, server, dan perangkat lainnya saling terhubung dalam suatu jaringan komputer. Pemilihan topologi sangat menentukan kecepatan pengiriman data, biaya instalasi, dan kemudahan saat perbaikan jika terjadi kendala.</p>
                 
-                <div class="card">
-                    <h3>1. Topologi Star (Bintang)</h3>
-                    <p>Setiap komputer terhubung ke satu perangkat pusat (hub/switch). Jika perangkat pusat rusak, seluruh jaringan mati.</p>
-                    <div class="pros-cons">
-                        <p class="pros"><strong>Kelebihan:</strong> Mudah mendeteksi masalah, satu kabel putus tidak mengganggu komputer lain.</p>
-                        <p class="cons"><strong>Kekurangan:</strong> Boros kabel, sangat tergantung pada perangkat pusat.</p>
+                <div class="highlight-box">
+                    <strong>Catatan Penting:</strong> Topologi dibagi menjadi dua jenis: <em>Topologi Fisik</em> (pemasangan kabel dan perangkat secara nyata) dan <em>Topologi Logis</em> (bagaimana data mengalir di dalam kabel tersebut).
+                </div>
+            </section>
+
+            <!-- Topologi Star -->
+            <section id="star" class="materi-section">
+                <h2>2. Topologi Star (Bintang)</h2>
+                <p>Topologi Star adalah jenis topologi yang paling banyak digunakan saat ini. Pada topologi ini, setiap komputer terhubung langsung ke satu perangkat pusat seperti <strong>Hub</strong> atau <strong>Switch</strong> menggunakan kabel individual (biasanya kabel UTP).</p>
+                
+                <div class="pro-con-box">
+                    <div class="pc-card kelebihan">
+                        <h4>✓ Kelebihan</h4>
+                        <ul>
+                            <li>Jika satu kabel komputer rusak, komputer lain tidak terganggu.</li>
+                            <li>Sangat mudah menambah komputer baru ke jaringan.</li>
+                            <li>Mudah mendeteksi letak kerusakan kabel.</li>
+                        </ul>
+                    </div>
+                    <div class="pc-card kekurangan">
+                        <h4>✗ Kekurangan</h4>
+                        <ul>
+                            <li>Jika Switch/Hub pusat rusak, seluruh jaringan akan mati total.</li>
+                            <li>Butuh banyak kabel, sehingga biaya instalasi lebih mahal.</li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="card">
-                    <h3>2. Topologi Bus</h3>
-                    <p>Menggunakan satu kabel tunggal (kabel utama) di mana semua komputer terhubung secara berurutan. Ujung kabel harus ditutup terminator.</p>
-                    <div class="pros-cons">
-                        <p class="pros"><strong>Kelebihan:</strong> Hemat kabel, biaya instalasi sangat murah.</p>
-                        <p class="cons"><strong>Kekurangan:</strong> Jika kabel utama rusak, seluruh jaringan lumpuh; rawan tabrakan data.</p>
+            <!-- Topologi Bus -->
+            <section id="bus" class="materi-section">
+                <h2>3. Topologi Bus</h2>
+                <p>Topologi Bus menggunakan satu kabel pusat (kabel utama/<em>backbone</em>) yang membentang, dan semua komputer dihubungkan ke kabel utama tersebut menggunakan konektor T. Di kedua ujung kabel utama harus dipasang alat bernama <em>Terminator</em>.</p>
+                
+                <div class="pro-con-box">
+                    <div class="pc-card kelebihan">
+                        <h4>✓ Kelebihan</h4>
+                        <ul>
+                            <li>Hemat kabel dan biayanya sangat murah.</li>
+                            <li>Instalasi sangat sederhana untuk jaringan skala kecil.</li>
+                        </ul>
+                    </div>
+                    <div class="pc-card kekurangan">
+                        <h4>✗ Kekurangan</h4>
+                        <ul>
+                            <li>Jika kabel utama putus, seluruh jaringan langsung lumpuh.</li>
+                            <li>Sering terjadi tabrakan data (collision) jika banyak komputer mengirim data bersamaan.</li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="card">
-                    <h3>3. Topologi Ring (Cincin)</h3>
-                    <p>Setiap komputer terhubung dengan dua komputer di sebelahnya, membentuk lingkaran tertutup menyerupai cincin.</p>
-                    <div class="pros-cons">
-                        <p class="pros"><strong>Kelebihan:</strong> Performa stabil, instalasi cukup mudah.</p>
-                        <p class="cons"><strong>Kekurangan:</strong> Satu komputer bermasalah akan mengganggu seluruh jaringan; sulit dikembangkan.</p>
+            <!-- Topologi Ring -->
+            <section id="ring" class="materi-section">
+                <h2>4. Topologi Ring (Cincin)</h2>
+                <p>Pada topologi ini, setiap komputer terhubung ke dua komputer di sebelah kanan dan kirinya, membentuk lingkaran tertutup menyerupai cincin. Data mengalir searah berputar dari satu komputer ke komputer lain.</p>
+                
+                <div class="pro-con-box">
+                    <div class="pc-card kelebihan">
+                        <h4>✓ Kelebihan</h4>
+                        <ul>
+                            <li>Performa pengiriman data stabil dan tidak ada risiko tabrakan data.</li>
+                            <li>Biaya pembuatan cenderung murah.</li>
+                        </ul>
+                    </div>
+                    <div class="pc-card kekurangan">
+                        <h4>✗ Kekurangan</h4>
+                        <ul>
+                            <li>Jika satu komputer atau kabel mengalami gangguan, lingkaran akan terputus dan semua komputer mati.</li>
+                            <li>Sulit untuk menambah atau mengurangi komputer karena harus memutus jaringan terlebih dahulu.</li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="card">
-                    <h3>4. Topologi Mesh (Jala)</h3>
-                    <p>Setiap komputer terhubung langsung ke setiap komputer lainnya dalam jaringan. Cocok untuk jaringan yang butuh keandalan tinggi.</p>
-                    <div class="pros-cons">
-                        <p class="pros"><strong>Kelebihan:</strong> Sangat aman, jika satu jalur putus ada jalur alternatif lain.</p>
-                        <p class="cons"><strong>Kekurangan:</strong> Membutuhkan banyak kabel dan biaya sangat mahal.</p>
-                    </div>
-                </div>
+            <!-- Ringkasan Perbandingan -->
+            <section id="ringkasan" class="materi-section">
+                <h2>5. Tabel Ringkasan</h2>
+                <p>Berikut adalah tabel ringkasan perbandingan ketiga topologi dasar di atas untuk membantu kamu memilih jenis jaringan yang tepat:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Topologi Star</th>
+                            <th>Topologi Bus</th>
+                            <th>Topologi Ring</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Kebutuhan Kabel</strong></td>
+                            <td>Banyak</td>
+                            <td>Sedikit (Hemat)</td>
+                            <td>Sedikit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biaya</strong></td>
+                            <td>Mahal</td>
+                            <td>Murah</td>
+                            <td>Murah</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Toleransi Kerusakan</strong></td>
+                            <td>Sangat Baik</td>
+                            <td>Buruk</td>
+                            <td>Buruk</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-            </div>
-        </section>
+        </main>
+
+        <!-- Sidebar / Navigasi Materi -->
+        <aside>
+            <h3>Navigasi Materi</h3>
+            <ul>
+                <li><a href="#pengenalan">1. Pengenalan Topologi</a></li>
+                <li><a href="#star">2. Topologi Star</a></li>
+                <li><a href="#bus">3. Topologi Bus</a></li>
+                <li><a href="#ring">4. Topologi Ring</a></li>
+                <li><a href="#ringkasan">5. Tabel Perbandingan</a></li>
+            </ul>
+        </aside>
+
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Web Pembelajaran Topologi Jaringan. Dibuat untuk edukasi.</p>
+        <p>&copy; 2026 Kelas Jaringan Komputer. All Rights Reserved.</p>
     </footer>
 
 </body>
