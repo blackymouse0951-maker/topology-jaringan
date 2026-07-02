@@ -73,10 +73,11 @@
             </div>
 
             <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
-            <button onclick="showMateri('star')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">Next → </button>
             <button onclick="showMateri('pengantar')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer"> ← Back</button>
+            <button onclick="showMateri('star')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">Next → </button>
             </div>
         </div>
+      </div>
 
         <div id="konten-star" class="materi-section space-y-6 hidden flex-col h-full justify-between">
             <div class="space-y-4">
@@ -137,18 +138,18 @@
     </footer>
 
     <script>
-        function showMateri(idMateri) {
-            const sections = document.querySelectorAll('.materi-section');
-            sections.forEach(section => {
-                section.classList.add('hidden');
-                section.classList.remove('flex');
-            });
+    function showMateri(idMateri) {
+        const sections = document.querySelectorAll('.materi-section');
+        sections.forEach(section => {
+            section.classList.add('hidden');
+            section.classList.remove('flex');
+        });
 
-            const activeSection = document.getElementById(`konten-${idMateri}`);
-            if (!activeSection) return;
-            activeSection.classList.remove('hidden');
-            activeSection.classList.add('flex');
-        }
-    </script>
+        const activeSection = document.getElementById(`konten-${idMateri}`);
+        if (!activeSection) return;
+        activeSection.classList.remove('hidden');
+        activeSection.classList.add('flex');
+    }
+</script>
 </body>
 </html>
