@@ -274,7 +274,7 @@
                 <div class="bg-rose-200 p-4 rounded-xl border border-rose-300">
                     <p class="font-semibold mb-1 text-rose-900">Kekurangan:</p>
                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
-                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Biaya Tinggi:</b> Membutuhkan jumlah kabel (untuk jaringan kabel) dan port I/O yang sangat banyak. Untuk perangkat sejumlah n, jumlah koneksi maksimal dihitung dengan rumus \(\frac{n(n-1)}{2}\).</span>
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Biaya Tinggi:</b> Membutuhkan jumlah kabel (untuk jaringan kabel) dan port I/O yang sangat banyak.</span>
                     </p>
                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
                         <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Instalasi Rumit:</b> Memerlukan konfigurasi yang kompleks dan manajemen perawatan yang sulit.</span>
@@ -290,6 +290,60 @@
                     Next →
                 </button>
              </div>
+         </div>
+
+         <div id="konten-hybrid" class="materi-section space-y-6 hidden flex-col h-full justify-between">
+            <div class="space-y-4">
+                <div class="space-y-1">
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Topologi Hybrid</h2>
+                </div>
+                <center><img src="hybrid.png" alt="Topologi Mesh" width="310" height="310"></center>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                   <b>Topologi Hybrid</b> adalah penggabungan dua atau lebih jenis topologi jaringan dasar yang berbeda (seperti star, bus, ring, atau mesh) menjadi satu sistem jaringan. Topologi ini dirancang untuk memaksimalkan kelebihan masing-masing topologi dasar guna memenuhi kebutuhan spesifik dan skala perusahaan.
+                </p>
+                <p class="font-bold text-slate-900">Cara Kerja:</p>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                   Menggabungkan dua atau lebih topologi dasar (seperti Star, Bus, Ring, atau Mesh) ke dalam satu sistem. Perangkat seperti hub, switch, atau router bertindak sebagai jembatan yang menyatukan segmen-segmen ini, memungkinkan aliran data tetap berjalan lancar melintasi struktur jaringan yang berbeda.
+                </p>
+    
+                <div class="bg-green-200 p-4 rounded-xl border border-green-300">
+                    <p class="font-semibold mb-1 text-green-900">Kelebihan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Fleksibilitas Desain Jaringan:</b> Anda dapat mengintegrasikan berbagai jenis topologi yang berbeda (seperti star dan mesh) secara bersamaan. Hal ini membuat jaringan bisa dirancang mengikuti struktur fisik bangunan gedung atau kebutuhan unik setiap divisi perusahaan.</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Skalabilitas yang Sangat Mudah:</b> Menambah titik (node) baru atau bahkan menyambungkan satu blok jaringan baru dapat dilakukan secara instan. Proses ekspansi ini tidak akan mengganggu atau menghentikan aktivitas pengguna lain yang sedang aktif di dalam jaringan utama.</span>
+                    </p>
+                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Keandalan dan Isolasi Kesalahan Terjamin:</b> Sistem ini memiliki kemampuan deteksi masalah yang sangat cepat. Jika terjadi kerusakan kabel atau eror pada satu segmen lokal, area yang terdampak langsung terisolasi sehingga seluruh segmen jaringan besar lainnya tetap bisa bertukar data tanpa hambatan.</span>
+                    </p>
+                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Aliran Transfer Data yang Efisien:</b> Topologi ini mampu menangani lalu lintas data yang sangat padat. Arsitek jaringan bisa mengombinasikan jalur cepat khusus (backbone) untuk menghubungkan area-area yang membutuhkan bandwidth besar.</span>
+                    </p>
+                </div>
+
+                <div class="bg-rose-200 p-4 rounded-xl border border-rose-300">
+                    <p class="font-semibold mb-1 text-rose-900">Kekurangan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Biaya Infrastruktur Sangat Mahal:</b> Anggaran yang dibutuhkan jauh lebih besar dibanding membangun topologi tunggal biasa. Biaya ini membengkak karena besarnya kebutuhan kabel penghubung serta wajibnya penggunaan perangkat keras aktif yang pintar seperti multi-layer switch, router, dan intelligent hub.</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Tingkat Kerumitan Desain Tinggi:</b> Proses perencanaan denah, instalasi kabel, hingga konfigurasi sistem jauh lebih rumit. Perbedaan arsitektur mendasar antar-segmen menuntut ketelitian tinggi agar tidak terjadi konflik alamat atau gangguan sinyal saat data bertukar format.</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Manajemen dan Perawatan yang Menantang:</b> Proses pemeliharaan (maintenance) harian dan pencarian sumber masalah (troubleshooting) memerlukan waktu serta ketelitian ekstra. Jaringan hybrid tidak bisa dikelola secara sembarangan dan membutuhkan dokumentasi jalur kabel yang sangat rapi.</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Ketergantungan pada Tenaga Ahli:</b> Pengoperasian jaringan ini wajib dipegang oleh administrator jaringan atau teknisi IT yang memiliki sertifikasi profesional khusus. Petugas harus memahami karakteristik setiap topologi dasar agar penanganan sistem bisa berjalan optimal.</span>
+                    </p>
+                </div>
+            </div>
+
+              <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
+                <button onclick="showMateri('mesh')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
+                    ← Back
+                </button>
+              </div>
          </div>
     </main>
 
