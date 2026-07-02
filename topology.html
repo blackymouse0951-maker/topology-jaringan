@@ -31,7 +31,9 @@
             </div>
             
             <div class="flex justify-end pt-6 border-t border-slate-100 mt-6">
-              <button onclick="showMateri('bus')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">Next → </button>
+                <button onclick="showMateri('bus')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Next →
+                </button>
             </div>
         </div>
 
@@ -45,36 +47,44 @@
                     <b>Topologi Bus</b> adalah konfigurasi jaringan linear di mana semua perangkat komputer terhubung ke satu kabel utama sebagai jalur transmisi tunggal. Kabel pusat ini bertindak seperti koridor utama atau tulang punggung (backbone) tempat data mengalir dari satu ujung ke ujung lainnya.
                 </p>
 
-                <left><p><b>Cara Kerja: </b></p></left>
+                <p class="font-bold text-slate-900">Cara Kerja:</p>
                 <p class="text-slate-600 leading-relaxed text-sm md:text-base">
                     Seluruh komputer terhubung secara estafet ke satu kabel panjang yang disebut backbone. Ketika sebuah data dikirim, data tersebut akan berjalan sepanjang kabel utama dan melewati semua komputer. Setiap komputer akan memeriksa apakah data tersebut ditujukan untuk dirinya. Jika iya, data diterima; jika tidak, data diabaikan. Di ujung kabel, terdapat Terminator untuk menyerap sinyal agar tidak memantul kembali dan menyebabkan gangguan.
                 </p>
 
                 <div class="bg-green-200 p-4 rounded-xl border border-green-300">
-                <p class="font-semibold mb-1">Kelebihan:</p>
-                <p class="text-slate-600 leading-relaxed text-sm md:text-base flex gap-2">
-                    <span class="font-semibold shrink-0">• Sangat Hemat Biaya:</span> Kebutuhan kabel sangat minim karena perangkat cukup dijajarkan di sepanjang kabel utama.</p>
-                <p class="text-slate-600 leading-relaxed text-sm md:text-base flex gap-2">
-                    <span class="font-semibold shrink-0">• Instalasi Sederhana:</span> Cocok untuk setup jaringan darurat atau skala kecil yang tidak memerlukan pengaturan rumit.</p>
+                    <p class="font-semibold mb-1 text-green-900">Kelebihan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Sangat Hemat Biaya:</span> Kebutuhan kabel sangat minim karena perangkat cukup dijajarkan di sepanjang kabel utama.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Instalasi Sederhana:</span> Cocok untuk setup jaringan darurat atau skala kecil yang tidak memerlukan pengaturan rumit.
+                    </p>
                 </div>
 
                 <div class="bg-rose-200 p-4 rounded-xl border border-rose-300">
-                <p class="font-semibold mb-1">Kekurangan:</p>
-                <p class="text-slate-600 leading-relaxed text-sm md:text-base flex gap-2">
-                    <span class="font-semibold shrink-0">• Titik Kegagalan Tunggal:</span> Jika kabel utama patah atau putus di tengah, seluruh jaringan setelah titik tersebut (atau bahkan seluruhnya) akan mati total.</p>
-                <p class="text-slate-600 leading-relaxed text-sm md:text-base flex gap-2">    
-                    <span class="font-semibold shrink-0">• Tabrakan Data:</span> Karena hanya ada satu jalur, jika dua komputer mengirim data secara bersamaan, akan terjadi tabrakan data yang memperlambat jaringan.</p>
-                <p class="text-slate-600 leading-relaxed text-sm md:text-base flex gap-2"> 
-                    <span class="font-semibold shrink-0">• Sulit Melacak Masalah:</span> Jika jaringan mati, teknisi harus memeriksa sambungan satu per satu di sepanjang kabel.</p>
-                    </div>
+                    <p class="font-semibold mb-1 text-rose-900">Kekurangan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Titik Kegagalan Tunggal:</span> Jika kabel utama patah atau putus di tengah, seluruh jaringan setelah titik tersebut (atau bahkan seluruhnya) akan mati total.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">• Tabrakan Data:</span> Karena hanya ada satu jalur, jika dua komputer mengirim data secara bersamaan, akan terjadi tabrakan data yang memperlambat jaringan.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2"> 
+                        <span class="font-semibold shrink-0">• Sulit Melacak Masalah:</span> Jika jaringan mati, teknisi harus memeriksa sambungan satu per satu di sepanjang kabel.
+                    </p>
                 </div>
             </div>
 
-           <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
-               <button onclick="showMateri('pengantar')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer"> ← Back</button>
-               <button onclick="showMateri('star')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">Next → </button></div>
+            <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
+                <button onclick="showMateri('pengantar')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
+                    ← Back
+                </button>
+                <button onclick="showMateri('star')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Next →
+                </button>
+            </div>
         </div>
-      </div>
 
         <div id="konten-star" class="materi-section space-y-6 hidden flex-col h-full justify-between">
             <div class="space-y-4">
@@ -98,7 +108,12 @@
             </div>
 
             <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
-                
+                <button onclick="showMateri('bus')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
+                    ← Kembali
+                </button>
+                <button onclick="showMateri('ring')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Lanjut: Topologi Ring →
+                </button>
             </div>
         </div>
 
@@ -124,7 +139,12 @@
             </div>
 
             <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
-                
+                <button onclick="showMateri('star')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
+                    ← Kembali
+                </button>
+                <button onclick="alert('Mantap! Berhasil menyelesaikan modul topologi pagi ini! 🎉')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Selesai Belajar ✨
+                </button>
             </div>
         </div>
 
@@ -135,18 +155,18 @@
     </footer>
 
     <script>
-    function showMateri(idMateri) {
-        const sections = document.querySelectorAll('.materi-section');
-        sections.forEach(section => {
-            section.classList.add('hidden');
-            section.classList.remove('flex');
-        });
+        function showMateri(idMateri) {
+            const sections = document.querySelectorAll('.materi-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('flex');
+            });
 
-        const activeSection = document.getElementById(`konten-${idMateri}`);
-        if (!activeSection) return;
-        activeSection.classList.remove('hidden');
-        activeSection.classList.add('flex');
-    }
-</script>
+            const activeSection = document.getElementById(`konten-${idMateri}`);
+            if (!activeSection) return;
+            activeSection.classList.remove('hidden');
+            activeSection.classList.add('flex');
+        }
+    </script>
 </body>
 </html>
