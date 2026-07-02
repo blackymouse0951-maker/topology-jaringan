@@ -1,249 +1,159 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Learning Topologi Jaringan</title>
+    <title>Belajar Topologi Jaringan</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        /* --- Google Fonts & Reset --- */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* --- Sidebar Navigation --- */
-        nav {
-            width: 260px;
-            background-color: #0f172a;
-            color: #fff;
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            height: 100vh;
-        }
-
-        nav .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            color: #38bdf8;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        nav ul li button {
-            width: 100%;
-            background: none;
-            border: none;
-            color: #94a3b8;
-            text-align: left;
-            padding: 0.75rem 1rem;
-            font-size: 1rem;
-            font-weight: 500;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        nav ul li button:hover, nav ul li button.active {
-            background-color: #1e293b;
-            color: #38bdf8;
-        }
-
-        /* --- Main Content Area --- */
-        main {
-            margin-left: 260px;
-            flex-grow: 1;
-            padding: 3rem;
-            max-width: 1000px;
-        }
-
-        /* --- Pages Management (Sembunyikan/Tampilkan) --- */
-        .page {
-            display: none; /* Sembunyikan semua halaman secara default */
-        }
-
-        .page.active {
-            display: block; /* Hanya tampilkan halaman yang aktif */
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- Typography & Elements --- */
-        h1 {
-            font-size: 2.2rem;
-            color: #0f172a;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            color: #475569;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        /* --- Card & Component Gaya Modern --- */
-        .card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
-            margin-bottom: 2rem;
-        }
-
-        .btn-primary {
-            background-color: #0284c7;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-primary:hover {
-            background-color: #0369a1;
-        }
-
-        /* Tata letak tombol materi */
-        .materi-nav-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        /* --- Footer --- */
-        footer {
-            margin-top: 4rem;
-            color: #94a3b8;
-            font-size: 0.875rem;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 1.5rem;
-        }
-
-        /* Responsif untuk Layar HP */
-        @media (max-width: 768px) {
-            body { flex-direction: column; }
-            nav { width: 100%; height: auto; position: relative; padding: 1rem; }
-            nav ul { flex-direction: row; justify-content: space-around; }
-            main { margin-left: 0; padding: 1.5rem; }
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between p-4 md:p-8">
 
-    <nav>
-        <div class="logo">🌐 TopoLearn</div>
-        <ul>
-            <li><button class="nav-btn active" onclick="switchPage('home', this)">Beranda</button></li>
-            <li><button class="nav-btn" onclick="switchPage('materi', this)">Materi Jaringan</button></li>
-            <li><button class="nav-btn" onclick="switchPage('tentang', this)">Tentang Kami</button></li>
-        </ul>
-    </nav>
+    <header class="max-w-2xl w-full mx-auto text-center my-4">
+        <h1 class="text-2xl font-bold text-indigo-600 tracking-tight">NetTopology 🌐</h1>
+        <p class="text-xs text-slate-400 mt-1">Modul Belajar Topologi Jaringan</p>
+    </header>
 
-    <main>
-
-        <section id="home" class="page active">
-            <h1>Selamat Datang di Portal Jaringan</h1>
-            <p>Platform pembelajaran interaktif untuk memahami bagaimana infrastruktur internet dan jaringan komputer dibangun menggunakan berbagai model topologi fisik.</p>
-            <div class="card">
-                <h3>Mulai Belajar Sekarang</h3>
-                <p>Materi kami dirancang secara ringkas dan mudah dipahami, lengkap dengan kelebihan serta kekurangan masing-masing arsitektur.</p>
-                <button class="btn-primary" onclick="document.querySelector('[onclick*=\'materi\']').click()">Buka Materi →</button>
+    <main class="max-w-2xl w-full mx-auto bg-white border border-slate-200/80 rounded-3xl shadow-xs p-6 md:p-8 my-auto flex flex-col justify-between min-h-[400px]">
+        
+        <div id="konten-pengantar" class="materi-section space-y-6 flex flex-col h-full justify-between">
+            <div class="space-y-4">
+                <div class="space-y-1">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Welcome</span>
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Apa itu Topologi Jaringan?</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                    <b>Topologi jaringan</b> adalah pola atau metode yang digunakan untuk menghubungkan beberapa komputer atau perangkat dalam jaringan, baik secara fisik maupun logis. Ini mengatur bagaimana node (perangkat) saling berkomunikasi dan bagaimana data mengalir dalam sistem tersebut.
+                </p>
             </div>
-        </section>
-
-
-        <section id="materi" class="page">
-            <h1>Modul Topologi Jaringan</h1>
-            <p>Pilih sub-bab di bawah ini untuk mempelajari jenis-jenis topologi:</p>
             
-            <div class="materi-nav-buttons">
-                <button class="btn-primary" style="background-color: #475569;" onclick="showSubMateri('sub-star')">Topologi Star</button>
-                <button class="btn-primary" style="background-color: #475569;" onclick="showSubMateri('sub-bus')">Topologi Bus</button>
+            <div class="flex justify-end pt-6 border-t border-slate-100 mt-6">
+                <button onclick="showMateri('bus')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Next →
+                </button>
+            </div>
+        </div>
+
+        <div id="konten-bus" class="materi-section space-y-6 hidden flex flex-col h-full justify-between">
+            <div class="space-y-4">
+                <div class="space-y-1">
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Topologi Bus</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                    <b>Topologi Bus</b> adalah konfigurasi jaringan linear di mana semua perangkat komputer terhubung ke satu kabel utama sebagai jalur transmisi tunggal. Kabel pusat ini bertindak seperti koridor utama atau tulang punggung (backbone) tempat data mengalir dari satu ujung ke ujung lainnya.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 justify-center items-center">
+                    <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100 flex flex-col items-center justify-center text-center">
+                        <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
+                        <p class="text-xs text-emerald-700">Irit kabel, biaya murah, dan gampang kalau mau nambah komputer baru.</p>
+                    </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100">
+                        <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
+                        <p class="text-xs text-emerald-700">Irit kabel, biaya murah, dan gampang kalau mau nambah komputer baru.</p>
+                    </div>
+                    <div class="bg-rose-50/60 p-4 rounded-xl border border-rose-100">
+                        <h4 class="font-semibold text-rose-800 mb-1 text-xs uppercase tracking-wide">👎 Kekurangan</h4>
+                        <p class="text-xs text-rose-700">Kalau kabel utama putus, semua mati. Sering terjadi tabrakan data.</p>
+                    </div>
+                </div>
             </div>
 
-            <div id="sub-star" class="card sub-materi" style="margin-top: 2rem;">
-                <h2>Arsitektur: Topologi Star (Bintang)</h2>
-                <p>Topologi Star menghubungkan semua komputer ke satu perangkat pusat (Switch/Hub). Jika salah satu komputer rusak, jaringan komputer lainnya tetap berjalan aman.</p>
-                <p><strong>Kelebihan:</strong> Sangat mudah mendeteksi kerusakan kabel dan fleksibel saat menambah perangkat baru.</p>
+            <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
+                <button onclick="showMateri('pengantar')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
+                    ← Kembali
+                </button>
+                <button onclick="showMateri('star')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Lanjut: Topologi Star →
+                </button>
+            </div>
+        </div>
+
+        <div id="konten-star" class="materi-section space-y-6 hidden flex flex-col h-full justify-between">
+            <div class="space-y-4">
+                <div class="space-y-1">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-blue-500">Topologi 02</span>
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">⭐ Topologi Star</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                    Ini topologi yang paling populer saat ini. Setiap komputer terhubung langsung ke satu alat pusat kontrol, biasanya berupa <strong>Hub atau Switch</strong> menggunakan kabelnya sendiri-sendiri.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100">
+                        <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
+                        <p class="text-xs text-emerald-700">Paling aman! Satu kabel komputer rusak, yang lainnya gak bakal keganggu.</p>
+                    </div>
+                    <div class="bg-rose-50/60 p-4 rounded-xl border border-rose-100">
+                        <h4 class="font-semibold text-rose-800 mb-1 text-xs uppercase tracking-wide">👎 Kekurangan</h4>
+                        <p class="text-xs text-rose-700">Boros kabel dan kalau alat pusatnya (Switch) rusak, semuanya ikut mati.</p>
+                    </div>
+                </div>
             </div>
 
-            <div id="sub-bus" class="card sub-materi" style="margin-top: 2rem; display: none;">
-                <h2>Arsitektur: Topologi Bus</h2>
-                <p>Topologi Bus menggunakan satu kabel pusat panjang sebagai jalur utama data (*backbone*). Semua komputer berbaris mengantre pada kabel tunggal ini.</p>
-                <p><strong>Kekurangan:</strong> Jika kabel utama ini terputus atau rusak, maka seluruh jaringan komputer akan mati total.</p>
+            <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
+                <button onclick="showMateri('bus')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
+                    ← Kembali
+                </button>
+                <button onclick="showMateri('ring')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Lanjut: Topologi Ring →
+                </button>
             </div>
-        </section>
+        </div>
 
-
-        <section id="tentang" class="page">
-            <h1>Tentang Website Ini</h1>
-            <div class="card">
-                <p>Website ini dibuat sebagai media pembelajaran interaktif bagi siswa maupun mahasiswa untuk memahami dasar-dasar perangkat keras jaringan (Computer Networking).</p>
-                <p>Versi: 2.0 (Responsive Multi-page Dashboard Model)</p>
+        <div id="konten-ring" class="materi-section space-y-6 hidden flex flex-col h-full justify-between">
+            <div class="space-y-4">
+                <div class="space-y-1">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-purple-500">Topologi 03</span>
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">⭕ Topologi Ring</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                    Komputer dihubungkan melingkar membentuk seperti <strong>cincin</strong>. Data mengalir satu arah dari satu komputer ke komputer sebelahnya sampai nembus ke tujuan.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100">
+                        <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
+                        <p class="text-xs text-emerald-700">Performa pengiriman data stabil dan layout kabel cenderung rapi.</p>
+                    </div>
+                    <div class="bg-rose-50/60 p-4 rounded-xl border border-rose-100">
+                        <h4 class="font-semibold text-rose-800 mb-1 text-xs uppercase tracking-wide">👎 Kekurangan</h4>
+                        <p class="text-xs text-rose-700">Satu komputer/kabel bermasalah, sirkulasi data macet total ke semuanya.</p>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <footer>
-            <p>&copy; 2026 TopoLearn Dashboard. Hak Cipta Dilindungi.</p>
-        </footer>
+            <div class="flex justify-between pt-6 border-t border-slate-100 mt-6">
+                <button onclick="showMateri('star')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
+                    ← Kembali
+                </button>
+                <button onclick="alert('Mantap! Berhasil menyelesaikan modul topologi pagi ini! 🎉')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                    Selesai Belajar ✨
+                </button>
+            </div>
+        </div>
 
     </main>
 
+    <footer class="text-center text-xs text-slate-400 my-4">
+        Project Pagi Santai • Tanpa Sidebar Ribet
+    </footer>
+
     <script>
-        // Fungsi 1: Mengatur perpindahan Halaman Utama
-        function switchPage(pageId, buttonElement) {
-            // Sembunyikan semua halaman utama
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
+        function showMateri(idMateri) {
+            // Sembunyikan semua section materi
+            const sections = document.querySelectorAll('.materi-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('flex'); // Reset flexbox-nya biar gak bentrok
+            });
 
-            // Tampilkan halaman utama yang dipilih
-            document.getElementById(pageId).classList.add('active');
-
-            // Atur efek tombol aktif di sidebar
-            const buttons = document.querySelectorAll('.nav-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            buttonElement.classList.add('active');
-        }
-
-        // Fungsi 2: Mengatur tombol ganti sub-materi di dalam halaman materi
-        function showSubMateri(subId) {
-            // Sembunyikan semua kotak sub-materi
-            const subMateris = document.querySelectorAll('.sub-materi');
-            subMateris.forEach(sub => sub.style.display = 'none');
-
-            // Tampilkan sub-materi yang diklik tombolnya
-            document.getElementById(subId).style.display = 'block';
+            // Tampilkan section yang dipilih dengan class flex khusus agar layout atas-bawah konsisten
+            const activeSection = document.getElementById(`konten-${idMateri}`);
+            activeSection.classList.remove('hidden');
+            activeSection.classList.add('flex');
         }
     </script>
-
 </body>
-</html>
+</html> benarkan kodenya
