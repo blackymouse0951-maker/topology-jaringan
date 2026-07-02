@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div id="konten-bus" class="materi-section space-y-6 hidden flex flex-col h-full justify-between">
+        <div id="konten-bus" class="materi-section space-y-6 hidden flex-col h-full justify-between">
             <div class="space-y-4">
                 <div class="space-y-1">
                     <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Topologi Bus</h2>
@@ -45,16 +45,20 @@
                 <p class="text-slate-600 leading-relaxed text-sm md:text-base">
                     <b>Topologi Bus</b> adalah konfigurasi jaringan linear di mana semua perangkat komputer terhubung ke satu kabel utama sebagai jalur transmisi tunggal. Kabel pusat ini bertindak seperti koridor utama atau tulang punggung (backbone) tempat data mengalir dari satu ujung ke ujung lainnya.
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 justify-center items-center">
-                    <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100 flex flex-col items-center justify-center text-center">
-                        <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
-                        <p class="text-xs text-emerald-700">Irit kabel, biaya murah, dan gampang kalau mau nambah komputer baru.</p>
-                    </div>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="sm:col-span-2 flex justify-center">
+                        <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100 text-center w-full sm:w-1/2">
+                            <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
+                            <p class="text-xs text-emerald-700">Irit kabel, biaya murah, dan gampang kalau mau nambah komputer baru.</p>
+                        </div>
+                    </div>
+
                     <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100">
                         <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
                         <p class="text-xs text-emerald-700">Irit kabel, biaya murah, dan gampang kalau mau nambah komputer baru.</p>
                     </div>
+
                     <div class="bg-rose-50/60 p-4 rounded-xl border border-rose-100">
                         <h4 class="font-semibold text-rose-800 mb-1 text-xs uppercase tracking-wide">👎 Kekurangan</h4>
                         <p class="text-xs text-rose-700">Kalau kabel utama putus, semua mati. Sering terjadi tabrakan data.</p>
@@ -72,7 +76,7 @@
             </div>
         </div>
 
-        <div id="konten-star" class="materi-section space-y-6 hidden flex flex-col h-full justify-between">
+        <div id="konten-star" class="materi-section space-y-6 hidden flex-col h-full justify-between">
             <div class="space-y-4">
                 <div class="space-y-1">
                     <span class="text-xs font-semibold uppercase tracking-wider text-blue-500">Topologi 02</span>
@@ -103,7 +107,7 @@
             </div>
         </div>
 
-        <div id="konten-ring" class="materi-section space-y-6 hidden flex flex-col h-full justify-between">
+        <div id="konten-ring" class="materi-section space-y-6 hidden flex-col h-full justify-between">
             <div class="space-y-4">
                 <div class="space-y-1">
                     <span class="text-xs font-semibold uppercase tracking-wider text-purple-500">Topologi 03</span>
@@ -142,18 +146,17 @@
 
     <script>
         function showMateri(idMateri) {
-            // Sembunyikan semua section materi
             const sections = document.querySelectorAll('.materi-section');
             sections.forEach(section => {
                 section.classList.add('hidden');
-                section.classList.remove('flex'); // Reset flexbox-nya biar gak bentrok
+                section.classList.remove('flex');
             });
 
-            // Tampilkan section yang dipilih dengan class flex khusus agar layout atas-bawah konsisten
             const activeSection = document.getElementById(`konten-${idMateri}`);
+            if (!activeSection) return;
             activeSection.classList.remove('hidden');
             activeSection.classList.add('flex');
         }
     </script>
 </body>
-</html> benarkan kodenya
+</html>
