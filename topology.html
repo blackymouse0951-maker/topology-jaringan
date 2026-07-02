@@ -178,11 +178,61 @@
                 <button onclick="showMateri('star')" class="text-slate-500 hover:bg-slate-100 font-medium text-sm px-4 py-2.5 rounded-xl transition-all cursor-pointer">
                     ← Back
                 </button>
-                <button onclick="alert('Mantap! Berhasil menyelesaikan modul topologi pagi ini! 🎉')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                 <button onclick="showMateri('tree')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
                     Next →
                 </button>
             </div>
         </div>
+
+         <div id="konten-tree" class="materi-section space-y-6 hidden flex-col h-full justify-between">
+            <div class="space-y-4">
+                <div class="space-y-1">
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Topologi Tree</h2>
+                </div>
+                <center><img src="Ring.png" alt="Topologi Ring" width="310" height="310"></center>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                   <b>Topologi Tree</b> adalah jaringan komputer bertingkat yang menggabungkan topologi star dan bus. Jaringan ini memiliki satu pusat (node root) yang terhubung ke cabang-cabang (node intermediate) hingga ke perangkat pengguna (node leaf), membentuk struktur hierarki yang menyerupai cabang pohon.
+                </p>
+                <p class="font-bold text-slate-900">Cara Kerja:</p>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                   Data mengalir secara hierarkis. Setiap kelompok perangkat diatur menggunakan hub atau switch (seperti topologi star), kemudian setiap kelompok dihubungkan ke kabel utama (backbone) seperti topologi bus.
+                </p>
+    
+                <div class="bg-green-200 p-4 rounded-xl border border-green-300">
+                    <p class="font-semibold mb-1 text-green-900">Kelebihan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Skalabilitas Sangat Tinggi:</b> Menambah komputer atau cabang baru dapat dilakukan dengan mudah tanpa mengganggu kinerja perangkat yang sudah aktif.</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Manajemen Jaringan Terpusat:</b> Struktur hierarki memudahkan pengaturan data, pengawasan lalu lintas, dan penerapan kebijakan keamanan dari titik pusat (root).</span>
+                    </p>
+                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Isolasi Kerusakan Mudah:</b> Jika salah satu cabang atau node pengguna mengalami kerusakan, masalah tersebut tidak akan menyebar ke cabang jaringan lainnya.</span>
+                    </p>
+                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Identifikasi Masalah Cepat:</b> Struktur bertingkat yang jelas membuat teknisi dapat mendeteksi lokasi kabel putus atau perangkat rusak secara instan.</span>
+                    </p>
+                </div>
+
+                <div class="bg-rose-200 p-4 rounded-xl border border-rose-300">
+                    <p class="font-semibold mb-1 text-rose-900">Kekurangan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Ketergantungan Backbone Tinggi:</b> Kabel utama bertindak sebagai jalur tunggal; jika kabel ini putus, seluruh komunikasi antarcabang akan lumpuh total.</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Biaya Instalasi Mahal:</b> Membutuhkan jumlah kabel yang sangat banyak serta perangkat penghubung (hub/switch) ekstra di setiap tingkatan cabang.</span>
+                    </p>
+                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Konfigurasi Rumit:</b> Perancangan jalur data dan pemasangan kabel memerlukan ketelitian tinggi agar tidak terjadi tabrakan data (collision).</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Perawatan Sulit:</b> Semakin banyak cabang dan tingkatan jaringan yang dibangun, maka proses pemeliharaan dan pelacakan error akan semakin kompleks.</span>
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">•</span><span class="flex-1"><b>Potensi Traffic Congestion:</b> Data dari semua cabang harus melewati jalur pusat yang sama, sehingga rentan memicu penumpukan arus data jika kapasitas tidak memadai.</span>
+                    </p>
+                </div>
+            </div>
 
     </main>
 
