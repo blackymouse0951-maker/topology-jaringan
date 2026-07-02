@@ -89,21 +89,37 @@
         <div id="konten-star" class="materi-section space-y-6 hidden flex-col h-full justify-between">
             <div class="space-y-4">
                 <div class="space-y-1">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-blue-500">Topologi 02</span>
-                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">⭐ Topologi Star</h2>
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Topologi Star</h2>
                 </div>
+                <center><img src="Bus.png" alt="Topologi Star" width="280" height="200"></center>
                 <p class="text-slate-600 leading-relaxed text-sm md:text-base">
-                    Ini topologi yang paling populer saat ini. Setiap komputer terhubung langsung ke satu alat pusat kontrol, biasanya berupa <strong>Hub atau Switch</strong> menggunakan kabelnya sendiri-sendiri.
+                   <b>Topologi Star</b> merupakan jenis topologi yang paling banyak digunakan saat ini, baik di jaringan rumah, sekolah, maupun perkantoran modern.
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-100">
-                        <h4 class="font-semibold text-emerald-800 mb-1 text-xs uppercase tracking-wide">👍 Kelebihan</h4>
-                        <p class="text-xs text-emerald-700">Paling aman! Satu kabel komputer rusak, yang lainnya gak bakal keganggu.</p>
-                    </div>
-                    <div class="bg-rose-50/60 p-4 rounded-xl border border-rose-100">
-                        <h4 class="font-semibold text-rose-800 mb-1 text-xs uppercase tracking-wide">👎 Kekurangan</h4>
-                        <p class="text-xs text-rose-700">Boros kabel dan kalau alat pusatnya (Switch) rusak, semuanya ikut mati.</p>
-                    </div>
+               <p class="font-bold text-slate-900">Cara Kerja:</p>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                    Setiap komputer atau node memiliki kabel tersendiri yang terhubung langsung ke sebuah perangkat pusat, biasanya berupa Switch atau Hub. Ketika Komputer A ingin mengirim data ke Komputer B, data tersebut dikirim terlebih dahulu ke Switch pusat. Switch kemudian membaca alamat tujuan (MAC Address) dan langsung meneruskannya ke Komputer B tanpa mengganggu perangkat lain.
+                </p>
+
+                <div class="bg-green-200 p-4 rounded-xl border border-green-300">
+                    <p class="font-semibold mb-1 text-green-900">Kelebihan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Isolasi Kerusakan:</span> Jika salah satu kabel LAN putus atau kartu jaringan (NIC) komputer rusak, hanya komputer tersebut yang terputus dari jaringan. Komputer lain tetap berfungsi normal.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Kemudahan Manajemen:</span> Sangat mudah untuk menambah atau mengurangi komputer baru tanpa perlu mematikan jaringan.
+                    </p>
+                     <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Deteksi Masalah Cepat:</span> Kerusakan mudah dilacak karena setiap perangkat memiliki jalur kabel tunggal ke pusat.
+                </div>
+
+                <div class="bg-rose-200 p-4 rounded-xl border border-rose-300">
+                    <p class="font-semibold mb-1 text-rose-900">Kekurangan:</p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">
+                        <span class="font-semibold shrink-0">• Ketergantungan Pusat:</span> Jika Switch atau Hub pusat mengalami kerusakan fisik atau hang, seluruh jaringan akan lumpuh total.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base flex gap-2">    
+                        <span class="font-semibold shrink-0">• Biaya Kabel:</span> Membutuhkan jumlah kabel yang jauh lebih banyak dibandingkan topologi Bus karena setiap perangkat wajib ditarik kabel tersendiri ke pusat.
+                    </p>
                 </div>
             </div>
 
