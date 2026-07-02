@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belajar Topologi Jaringan</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
@@ -12,6 +13,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 flex min-h-screen">
 
+    <!-- SIDEBAR NAVIGATION -->
     <aside class="w-64 bg-white border-r border-slate-200 p-6 flex flex-col justify-between hidden md:flex">
         <div>
             <div class="mb-8">
@@ -20,16 +22,16 @@
             </div>
             
             <nav class="space-y-1">
-                <button onclick="showMateri('pengantar')" id="btn-pengantar" class="nav-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium bg-indigo-50 text-indigo-600 transition-all">
+                <button onclick="showMateri('pengantar')" id="btn-pengantar" class="nav-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium bg-indigo-50 text-indigo-600 transition-all cursor-pointer">
                     👋 Pengantar
                 </button>
-                <button onclick="showMateri('bus')" id="btn-bus" class="nav-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
+                <button onclick="showMateri('bus')" id="btn-bus" class="nav-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all cursor-pointer">
                     🚌 Topologi Bus
                 </button>
-                <button onclick="showMateri('star')" id="btn-star" class="nav-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
+                <button onclick="showMateri('star')" id="btn-star" class="nav-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all cursor-pointer">
                     ⭐ Topologi Star
                 </button>
-                <button onclick="showMateri('ring')" id="btn-ring" class="nav-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
+                <button onclick="showMateri('ring')" id="btn-ring" class="nav-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all cursor-pointer">
                     ⭕ Topologi Ring
                 </button>
             </nav>
@@ -40,107 +42,146 @@
         </div>
     </aside>
 
-    <main class="flex-1 p-6 md:p-12 max-w-4xl">
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 p-6 md:p-12 max-w-4xl flex flex-col justify-between">
         
-        <div id="konten-pengantar" class="materi-section space-y-6">
-            <div class="space-y-2">
-                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Welcome</span>
-                <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Apa itu Topologi Jaringan?</h2>
+        <div class="w-full">
+            <!-- PENGANTAR -->
+            <div id="konten-pengantar" class="materi-section space-y-6">
+                <div class="space-y-2">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Welcome</span>
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Apa itu Topologi Jaringan?</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    Topologi jaringan adalah peta atau struktur yang menjelaskan bagaimana cara komputer-komputer saling terhubung satu sama lain dalam sebuah jaringan. Pemilihan topologi bakal nentuin kecepatan data, biaya pembuatan, hingga kemudahan saat ada jaringan yang rusak.
+                </p>
+                <div class="p-4 bg-amber-50 border border-amber-200 rounded-2xl text-amber-800 text-sm">
+                    💡 <strong>Tips Pagi:</strong> Baca materi di bawah ini lalu klik tombol di kanan bawah untuk lanjut ke materi berikutnya!
+                </div>
+                
+                <!-- BUTTON NAVIGASI BAWAH -->
+                <div class="flex justify-end pt-8 border-t border-slate-200/60">
+                    <button onclick="showMateri('bus')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                        Mulai Belajar: Topologi Bus →
+                    </button>
+                </div>
             </div>
-            <p class="text-slate-600 leading-relaxed">
-                Topologi jaringan adalah peta atau struktur yang menjelaskan bagaimana cara komputer-komputer saling terhubung satu sama lain dalam sebuah jaringan. Pemilihan topologi bakal nentuin kecepatan data, biaya pembuatan, hingga kemudahan saat ada jaringan yang rusak.
-            </p>
-            <div class="p-4 bg-amber-50 border border-amber-200 rounded-2xl text-amber-800 text-sm">
-                💡 <strong>Tips Pagi:</strong> Pilih menu di sebelah kiri (atau klik materi di bawah jika di HP) untuk melihat visualisasi dan penjelasan tiap jenis topologi!
-            </div>
-            
-            <div class="grid grid-cols-3 gap-2 md:hidden pt-4">
-                <button onclick="showMateri('bus')" class="bg-indigo-600 text-white p-3 rounded-xl text-xs font-medium">Bus</button>
-                <button onclick="showMateri('star')" class="bg-indigo-600 text-white p-3 rounded-xl text-xs font-medium">Star</button>
-                <button onclick="showMateri('ring')" class="bg-indigo-600 text-white p-3 rounded-xl text-xs font-medium">Ring</button>
-            </div>
-        </div>
 
-        <div id="konten-bus" class="materi-section space-y-6 hidden">
-            <div class="space-y-2">
-                <span class="text-xs font-semibold uppercase tracking-wider text-amber-500">Tipe Linear</span>
-                <h2 class="text-3xl font-bold text-slate-900 tracking-tight">🚌 Topologi Bus</h2>
-            </div>
-            <p class="text-slate-600 leading-relaxed">
-                Topologi Bus menghubungkan semua komputer menggunakan <strong>satu kabel utama</strong> (bus) lurus yang panjang. Di kedua ujung kabel utama ini harus ditutup dengan alat bernama <em>terminator</em>.
-            </p>
-            <div class="grid md:grid-cols-2 gap-4 pt-2">
-                <div class="bg-emerald-50 p-5 rounded-2xl border border-emerald-100">
-                    <h4 class="font-semibold text-emerald-800 mb-2 text-sm">👍 Kelebihan</h4>
-                    <ul class="text-xs text-emerald-700 space-y-1 list-disc list-inside">
-                        <li>Irit kabel dan biaya murah</li>
-                        <li>Sangat mudah untuk ditambah komputer baru</li>
-                    </ul>
+            <!-- TOPOLOGI BUS -->
+            <div id="konten-bus" class="materi-section space-y-6 hidden">
+                <div class="space-y-2">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-amber-500">Tipe Linear</span>
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">🚌 Topologi Bus</h2>
                 </div>
-                <div class="bg-rose-50 p-5 rounded-2xl border border-rose-100">
-                    <h4 class="font-semibold text-rose-800 mb-2 text-sm">👎 Kekurangan</h4>
-                    <ul class="text-xs text-rose-700 space-y-1 list-disc list-inside">
-                        <li>Kalau kabel utamanya putus, seluruh jaringan langsung mati</li>
-                        <li>Sering terjadi tabrakan data (*collision*)</li>
-                    </ul>
+                <p class="text-slate-600 leading-relaxed">
+                    Topologi Bus menghubungkan semua komputer menggunakan <strong>satu kabel utama</strong> (bus) lurus yang panjang. Di kedua ujung kabel utama ini harus ditutup dengan alat bernama <em>terminator</em>.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-emerald-50 p-5 rounded-2xl border border-emerald-100">
+                        <h4 class="font-semibold text-emerald-800 mb-2 text-sm">👍 Kelebihan</h4>
+                        <ul class="text-xs text-emerald-700 space-y-1 list-disc list-inside">
+                            <li>Irit kabel dan biaya murah</li>
+                            <li>Sangat mudah untuk ditambah komputer baru</li>
+                        </ul>
+                    </div>
+                    <div class="bg-rose-50 p-5 rounded-2xl border border-rose-100">
+                        <h4 class="font-semibold text-rose-800 mb-2 text-sm">👎 Kekurangan</h4>
+                        <ul class="text-xs text-rose-700 space-y-1 list-disc list-inside">
+                            <li>Kalau kabel utamanya putus, seluruh jaringan langsung mati</li>
+                            <li>Sering terjadi tabrakan data (*collision*)</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div id="konten-star" class="materi-section space-y-6 hidden">
-            <div class="space-y-2">
-                <span class="text-xs font-semibold uppercase tracking-wider text-blue-500">Tipe Terpusat</span>
-                <h2 class="text-3xl font-bold text-slate-900 tracking-tight">⭐ Topologi Star</h2>
-            </div>
-            <p class="text-slate-600 leading-relaxed">
-                Ini topologi yang paling sering dipakai saat ini. Setiap komputer terhubung langsung ke satu alat pusat kontrol, biasanya berupa <strong>Hub atau Switch</strong> menggunakan kabel masing-masing.
-            </p>
-            <div class="grid md:grid-cols-2 gap-4 pt-2">
-                <div class="bg-emerald-50 p-5 rounded-2xl border border-emerald-100">
-                    <h4 class="font-semibold text-emerald-800 mb-2 text-sm">👍 Kelebihan</h4>
-                    <ul class="text-xs text-emerald-700 space-y-1 list-disc list-inside">
-                        <li>Paling aman! Kalau satu kabel komputer rusak, komputer lain tetap normal</li>
-                        <li>Mudah mendeteksi kerusakan kabel</li>
-                    </ul>
-                </div>
-                <div class="bg-rose-50 p-5 rounded-2xl border border-rose-100">
-                    <h4 class="font-semibold text-rose-800 mb-2 text-sm">👎 Kekurangan</h4>
-                    <ul class="text-xs text-rose-700 space-y-1 list-disc list-inside">
-                        <li>Boros kabel, otomatis biaya lebih mahal</li>
-                        <li>Kalau Switch/Hub pusatnya rusak, semua jaringan ikut lumpuh</li>
-                    </ul>
+                <!-- BUTTON NAVIGASI BAWAH -->
+                <div class="flex justify-between pt-8 border-t border-slate-200/60">
+                    <button onclick="showMateri('pengantar')" class="text-slate-500 hover:bg-slate-200/60 font-medium text-sm px-5 py-2.5 rounded-xl transition-all cursor-pointer">
+                        ← Kembali
+                    </button>
+                    <button onclick="showMateri('star')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                        Lanjut: Topologi Star →
+                    </button>
                 </div>
             </div>
-        </div>
 
-        <div id="konten-ring" class="materi-section space-y-6 hidden">
-            <div class="space-y-2">
-                <span class="text-xs font-semibold uppercase tracking-wider text-purple-500">Tipe Melingkar</span>
-                <h2 class="text-3xl font-bold text-slate-900 tracking-tight">⭕ Topologi Ring</h2>
-            </div>
-            <p class="text-slate-600 leading-relaxed">
-                Sesuai namanya, komputer-komputer dihubungkan melingkar membentuk seperti <strong>cincin</strong>. Data mengalir satu arah dari satu komputer ke komputer sebelahnya sampai mencapai tujuan.
-            </p>
-            <div class="grid md:grid-cols-2 gap-4 pt-2">
-                <div class="bg-emerald-50 p-5 rounded-2xl border border-emerald-100">
-                    <h4 class="font-semibold text-emerald-800 mb-2 text-sm">👍 Kelebihan</h4>
-                    <ul class="text-xs text-emerald-700 space-y-1 list-disc list-inside">
-                        <li>Performa pengiriman data cenderung stabil</li>
-                        <li>Layout kabelnya terlihat rapi dan ringkas</li>
-                    </ul>
+            <!-- TOPOLOGI STAR -->
+            <div id="konten-star" class="materi-section space-y-6 hidden">
+                <div class="space-y-2">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-blue-500">Tipe Terpusat</span>
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">⭐ Topologi Star</h2>
                 </div>
-                <div class="bg-rose-50 p-5 rounded-2xl border border-rose-100">
-                    <h4 class="font-semibold text-rose-800 mb-2 text-sm">👎 Kekurangan</h4>
-                    <ul class="text-xs text-rose-700 space-y-1 list-disc list-inside">
-                        <li>Sama seperti tipe Bus, satu komputer bermasalah, sirkulasi data macet semua</li>
-                        <li>Sulit untuk dikonfigurasi ulang atau dikembangkan</li>
-                    </ul>
+                <p class="text-slate-600 leading-relaxed">
+                    Ini topologi yang paling sering dipakai saat ini. Setiap komputer terhubung langsung ke satu alat pusat kontrol, biasanya berupa <strong>Hub atau Switch</strong> menggunakan kabel masing-masing.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-emerald-50 p-5 rounded-2xl border border-emerald-100">
+                        <h4 class="font-semibold text-emerald-800 mb-2 text-sm">👍 Kelebihan</h4>
+                        <ul class="text-xs text-emerald-700 space-y-1 list-disc list-inside">
+                            <li>Paling aman! Kalau satu kabel komputer rusak, komputer lain tetap normal</li>
+                            <li>Mudah mendeteksi kerusakan kabel</li>
+                        </ul>
+                    </div>
+                    <div class="bg-rose-50 p-5 rounded-2xl border border-rose-100">
+                        <h4 class="font-semibold text-rose-800 mb-2 text-sm">👎 Kekurangan</h4>
+                        <ul class="text-xs text-rose-700 space-y-1 list-disc list-inside">
+                            <li>Boros kabel, otomatis biaya lebih mahal</li>
+                            <li>Kalau Switch/Hub pusatnya rusak, semua jaringan ikut lumpuh</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BUTTON NAVIGASI BAWAH -->
+                <div class="flex justify-between pt-8 border-t border-slate-200/60">
+                    <button onclick="showMateri('bus')" class="text-slate-500 hover:bg-slate-200/60 font-medium text-sm px-5 py-2.5 rounded-xl transition-all cursor-pointer">
+                        ← Kembali
+                    </button>
+                    <button onclick="showMateri('ring')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                        Lanjut: Topologi Ring →
+                    </button>
+                </div>
+            </div>
+
+            <!-- TOPOLOGI RING -->
+            <div id="konten-ring" class="materi-section space-y-6 hidden">
+                <div class="space-y-2">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-purple-500">Tipe Melingkar</span>
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">⭕ Topologi Ring</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    Sesuai namanya, komputer-komputer dihubungkan melingkar membentuk seperti <strong>cincin</strong>. Data mengalir satu arah dari satu komputer ke komputer sebelahnya sampai mencapai tujuan.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-emerald-50 p-5 rounded-2xl border border-emerald-100">
+                        <h4 class="font-semibold text-emerald-800 mb-2 text-sm">👍 Kelebihan</h4>
+                        <ul class="text-xs text-emerald-700 space-y-1 list-disc list-inside">
+                            <li>Performa pengiriman data cenderung stabil</li>
+                            <li>Layout kabelnya terlihat rapi dan ringkas</li>
+                        </ul>
+                    </div>
+                    <div class="bg-rose-50 p-5 rounded-2xl border border-rose-100">
+                        <h4 class="font-semibold text-rose-800 mb-2 text-sm">👎 Kekurangan</h4>
+                        <ul class="text-xs text-rose-700 space-y-1 list-disc list-inside">
+                            <li>Sama seperti tipe Bus, satu komputer bermasalah, sirkulasi data macet semua</li>
+                            <li>Sulit untuk dikonfigurasi ulang atau dikembangkan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BUTTON NAVIGASI BAWAH -->
+                <div class="flex justify-between pt-8 border-t border-slate-200/60">
+                    <button onclick="showMateri('star')" class="text-slate-500 hover:bg-slate-200/60 font-medium text-sm px-5 py-2.5 rounded-xl transition-all cursor-pointer">
+                        ← Kembali
+                    </button>
+                    <button onclick="alert('Hore! Kamu sudah menyelesaikan semua materi pagi ini! 🎉')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer">
+                        Selesai Belajar ✨
+                    </button>
                 </div>
             </div>
         </div>
 
     </main>
 
+    <!-- LOGIKA JAVASCRIPT -->
     <script>
         function showMateri(idMateri) {
             // 1. Sembunyikan semua section materi
@@ -150,19 +191,22 @@
             // 2. Tampilkan section yang dipilih
             document.getElementById(`konten-${idMateri}`).classList.remove('hidden');
 
-            // 3. Reset warna tombol navigasi di sidebar (biar yang aktif aja yang berwarna)
+            // 3. Reset warna tombol navigasi di sidebar
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('bg-indigo-50', 'text-indigo-600');
                 btn.classList.add('text-slate-600', 'hover:bg-slate-100');
             });
 
-            // 4. Kasih efek aktif pada tombol yang sedang diklik (Khusus tampilan Desktop)
+            // 4. Kasih efek aktif pada tombol sidebar yang sesuai
             const activeBtn = document.getElementById(`btn-${idMateri}`);
             if (activeBtn) {
                 activeBtn.classList.remove('text-slate-600', 'hover:bg-slate-100');
                 activeBtn.classList.add('bg-indigo-50', 'text-indigo-600');
             }
+            
+            // Otomatis scroll ke atas pas ganti materi biar nyaman dibaca
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
